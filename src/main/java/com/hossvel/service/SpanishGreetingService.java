@@ -6,8 +6,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 import java.util.List;
 
 @ApplicationScoped
-public class SpanishGreetingService //implements IGreetingService {
-{
+public class SpanishGreetingService implements IGreetingService {
 
     public String greet(String name) {
         return "¡Hola, " + name + "!";
