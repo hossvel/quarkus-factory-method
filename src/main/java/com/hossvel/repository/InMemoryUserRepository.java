@@ -14,18 +14,13 @@ public class InMemoryUserRepository implements IUserRepository {
 
     private Set<User> users = Collections.newSetFromMap(Collections.synchronizedMap(new HashMap<>()));
 
-
-    @PostConstruct
-    void init(){
-
-        users.add( new User("Hossmell1", "hossmell@example.com"));
-        users.add( new User("Hossmell2", "hossmell@example.com"));
-        users.add( new User("Hossmell3", "hossmell@example.com"));
-
-    }
-
     @Override
     public Set<User> listAllUsers() {
+        users.clear();
+        users.add( new User("Memory1", "hossmell@example.com"));
+        users.add( new User("Memory2", "hossmell@example.com"));
+        users.add( new User("Memory3", "hossmell@example.com"));
+
         return users;
     }
 }
